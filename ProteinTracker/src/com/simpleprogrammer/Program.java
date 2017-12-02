@@ -16,7 +16,7 @@ public class Program {
 		session.save(user);
 		
 		session.getTransaction().commit();
-		User loadedUser = (User) session.get(User.class, 1);
+		User loadedUser = (User) session.load(User.class, 1);
 		System.out.println(loadedUser.getName());
 		System.out.println(loadedUser.getGoal());
 		session.beginTransaction();
